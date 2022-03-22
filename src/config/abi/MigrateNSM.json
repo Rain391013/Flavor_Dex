@@ -1,0 +1,645 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "withdrawalBy",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			}
+		],
+		"name": "AdminTokenWithdrawal",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "holderTotalDeposits",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "holderRemainingDeposits",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "globalTotal_deposits",
+				"type": "uint256"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "note",
+				"type": "string"
+			}
+		],
+		"name": "DepositReceived",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "holder",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "snapshotBalance",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "snapshotAmountOutBNB",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "globalTotal_snapshotBalance",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "globalTotal_snapshotAmountOutBNB",
+				"type": "uint256"
+			}
+		],
+		"name": "HolderAdded",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "acceptIceCreamMan_OPI",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "holder",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "snapshotBalance_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "snapshotAmountOutBNB_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "completedClaims_",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "completedDeposits_",
+				"type": "bool"
+			}
+		],
+		"name": "addholder",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "adminTokenWithdrawal",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address[]",
+				"name": "holders",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "snapshotBalance_",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "snapshotAmountOutBNB_",
+				"type": "uint256[]"
+			}
+		],
+		"name": "batchAddHolder",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "claim",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "depositMAX",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokensToDeposit",
+				"type": "uint256"
+			}
+		],
+		"name": "depositSome",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "authorizedAddress",
+				"type": "address"
+			}
+		],
+		"name": "grantAuthorization",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "iceCreamMan_",
+				"type": "address"
+			}
+		],
+		"name": "initialize",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "migrateClaimedNSM",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "revokedAddress",
+				"type": "address"
+			}
+		],
+		"name": "revokeAuthorization",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "nsm",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "flv",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "creamery",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "flvPerNativeCoin_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint16",
+				"name": "maxBatchLength_",
+				"type": "uint16"
+			}
+		],
+		"name": "set",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "holder",
+				"type": "address"
+			}
+		],
+		"name": "toggleBlacklisted",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "toggleClaims",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "toggleDeposits",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "new_iceCreamMan",
+				"type": "address"
+			}
+		],
+		"name": "transferICM_OICM",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Creamery",
+		"outputs": [
+			{
+				"internalType": "contract ICreamery",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "FLV",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "holder",
+				"type": "address"
+			}
+		],
+		"name": "getHolderInfo",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "snapshotBalance_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "snapshotAmountOutBNB_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "holderDeposits_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "remainingNSMdeposit_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maxClaimableFLV",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "currentClaimableFLV",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "claimedFLV_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "remainingClaimableFLV_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "completedDeposits_",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "completedClaims_",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getInfo",
+		"outputs": [
+			{
+				"internalType": "uint32",
+				"name": "snapshot_block",
+				"type": "uint32"
+			},
+			{
+				"internalType": "uint32",
+				"name": "snapshot_timestamp",
+				"type": "uint32"
+			},
+			{
+				"internalType": "string",
+				"name": "snapshot_date",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "snapshot_reservesNSM",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "snapshot_reservesBNB",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "globalTotal_snapshotBalance_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "globalTotal_snapshotAmountOutBNB_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "globalTotal_deposits_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "globalTotal_claims_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "flvPerNativeCoin_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "claimsEnabled_",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "depositsEnabled_",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getMyInfo",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "snapshotBalance_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "snapshotAmountOutBNB_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "holderDeposits_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "remainingNSMdeposit_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "maxClaimableFLV",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "currentClaimableFLV",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "claimedFLV_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "remainingClaimableFLV_",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "completedDeposits_",
+				"type": "bool"
+			},
+			{
+				"internalType": "bool",
+				"name": "completedClaims_",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "iceCreamMan",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "addr",
+				"type": "address"
+			}
+		],
+		"name": "isAuthorized",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "NSM",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pendingICM",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Router",
+		"outputs": [
+			{
+				"internalType": "contract IDEXRouter",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "timestamp_claimsEnabled",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

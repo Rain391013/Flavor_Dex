@@ -1,0 +1,14 @@
+[
+	{
+		"inputs": [{"internalType": "address", "name": "tokenAddress", "type": "address"}],
+		"name": "getData",
+		"outputs": [
+			{"internalType": "string", "name": "", "type": "string"},
+			{"internalType": "string", "name": "", "type": "string"},
+			{"internalType": "uint8", "name": "", "type": "uint8"},
+			{"internalType": "uint256", "name": "", "type": "uint256"}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

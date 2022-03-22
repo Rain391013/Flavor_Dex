@@ -1,0 +1,66 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{"indexed": true, "internalType": "address", "name": "previousOwner", "type": "address"},
+			{"indexed": true, "internalType": "address", "name": "newOwner", "type": "address"}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event",
+		"signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+	},
+	{"anonymous": false, "inputs": [{"indexed": false, "internalType": "uint256", "name": "chainId", "type": "uint256"}], "name": "chainIdUpdated", "type": "event", "signature": "0x8a99a1fe820334df0668b31903e9e6d241a55cab11a54892315f85698469383e"},
+	{"anonymous": false, "inputs": [{"indexed": false, "internalType": "address", "name": "chainLinkAggregatorV3Address", "type": "address"}], "name": "chainLinkAggregatorV3AddressUpdated", "type": "event", "signature": "0xefc77e8d64834a3c799d410e7bd8af7621e64028ed0a18630d7ab8c61e1e1d7f"},
+	{"anonymous": false, "inputs": [{"indexed": false, "internalType": "address", "name": "nativeCoinAddress", "type": "address"}], "name": "nativeCoinUpdated", "type": "event", "signature": "0xe789fcf37132e96b23327f841e8533eedea281e71e0e6a3aa280ac92b311bad6"},
+	{"inputs": [{"internalType": "uint256", "name": "_newChainId", "type": "uint256"}], "name": "setNewChainId", "outputs": [], "stateMutability": "nonpayable", "type": "function", "signature": "0x5e485818"},
+	{"inputs": [{"internalType": "address", "name": "_chainLinkAggregatorV3Address", "type": "address"}], "name": "setNewChainLinkAggregatorV3Address", "outputs": [], "stateMutability": "nonpayable", "type": "function", "signature": "0x215daf5d"},
+	{"inputs": [{"internalType": "address", "name": "_nativeCoin", "type": "address"}], "name": "setNewNativeCoin", "outputs": [], "stateMutability": "nonpayable", "type": "function", "signature": "0x3c55b335"},
+	{"inputs": [{"internalType": "address", "name": "newOwner", "type": "address"}], "name": "transferOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function", "signature": "0xf2fde38b"},
+	{"inputs": [], "stateMutability": "nonpayable", "type": "constructor"},
+	{"inputs": [], "name": "getAggregatorAddress", "outputs": [{"internalType": "address", "name": "", "type": "address"}], "stateMutability": "view", "type": "function", "constant": true, "signature": "0xe8d6e0de"},
+	{"inputs": [], "name": "getChainId", "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}], "stateMutability": "view", "type": "function", "constant": true, "signature": "0x3408e470"},
+	{"inputs": [], "name": "getNativeCoin", "outputs": [{"internalType": "address", "name": "", "type": "address"}], "stateMutability": "view", "type": "function", "constant": true, "signature": "0x14cbfc09"},
+	{
+		"inputs": [],
+		"name": "getNativeCoinPrice",
+		"outputs": [
+			{"internalType": "uint256", "name": "", "type": "uint256"},
+			{"internalType": "uint8", "name": "", "type": "uint8"},
+			{"internalType": "string", "name": "", "type": "string"},
+			{"internalType": "uint256", "name": "", "type": "uint256"}
+		],
+		"stateMutability": "view",
+		"type": "function",
+		"constant": true,
+		"signature": "0xb84cf6d6"
+	},
+	{
+		"inputs": [
+			{"internalType": "address", "name": "factory", "type": "address"},
+			{"internalType": "address", "name": "tokenAddress", "type": "address"}
+		],
+		"name": "getPrice",
+		"outputs": [
+			{"internalType": "uint256", "name": "tokenPrice", "type": "uint256"},
+			{"internalType": "uint256", "name": "priceDecimals", "type": "uint256"}
+		],
+		"stateMutability": "view",
+		"type": "function",
+		"constant": true,
+		"signature": "0xac41865a"
+	},
+	{"inputs": [], "name": "owner", "outputs": [{"internalType": "address", "name": "", "type": "address"}], "stateMutability": "view", "type": "function", "constant": true, "signature": "0x8da5cb5b"},
+	{
+		"inputs": [
+			{"internalType": "uint256", "name": "amountA", "type": "uint256"},
+			{"internalType": "uint256", "name": "reserveA", "type": "uint256"},
+			{"internalType": "uint256", "name": "reserveB", "type": "uint256"}
+		],
+		"name": "quote",
+		"outputs": [{"internalType": "uint256", "name": "amountB", "type": "uint256"}],
+		"stateMutability": "pure",
+		"type": "function",
+		"constant": true,
+		"signature": "0xad615dec"
+	}
+]

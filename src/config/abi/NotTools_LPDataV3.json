@@ -1,0 +1,105 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{"indexed": true, "internalType": "address", "name": "previousOwner", "type": "address"},
+			{"indexed": true, "internalType": "address", "name": "newOwner", "type": "address"}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{"anonymous": false, "inputs": [{"indexed": false, "internalType": "uint256", "name": "chainId", "type": "uint256"}], "name": "chainIdUpdated", "type": "event"},
+	{"anonymous": false, "inputs": [{"indexed": false, "internalType": "address", "name": "nativeCoinAddress", "type": "address"}], "name": "nativeCoinUpdated", "type": "event"},
+	{"anonymous": false, "inputs": [{"indexed": false, "internalType": "address", "name": "notLivePriceV3Address", "type": "address"}], "name": "notLivePriceV3AddressUpdated", "type": "event"},
+	{"inputs": [{"internalType": "address", "name": "newOwner", "type": "address"}], "name": "transferOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function"},
+	{"inputs": [], "stateMutability": "nonpayable", "type": "constructor"},
+	{
+		"inputs": [{"internalType": "address", "name": "lpTokenAddress", "type": "address"}],
+		"name": "getAllLPTokenInfo",
+		"outputs": [
+			{"internalType": "string", "name": "_name", "type": "string"},
+			{"internalType": "string", "name": "_symbol", "type": "string"},
+			{"internalType": "uint8", "name": "_decimals", "type": "uint8"},
+			{"internalType": "uint256", "name": "_totalSupply", "type": "uint256"},
+			{"internalType": "address", "name": "_factory", "type": "address"},
+			{"internalType": "address", "name": "_token0", "type": "address"},
+			{"internalType": "address", "name": "_token1", "type": "address"},
+			{"internalType": "string", "name": "token0Name", "type": "string"},
+			{"internalType": "string", "name": "token1Name", "type": "string"},
+			{"internalType": "uint256", "name": "token0Decimals", "type": "uint256"},
+			{"internalType": "uint256", "name": "token1Decimals", "type": "uint256"}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{"inputs": [], "name": "getChainId", "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}], "stateMutability": "view", "type": "function"},
+	{
+		"inputs": [{"internalType": "address", "name": "lpTokenAddress", "type": "address"}],
+		"name": "getLPTokenPrice",
+		"outputs": [
+			{"internalType": "uint256", "name": "lpTokenPrice", "type": "uint256"},
+			{"internalType": "uint256", "name": "lpTokenPriceDecimals", "type": "uint256"}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{"internalType": "address", "name": "lpTokenAddress", "type": "address"},
+			{"internalType": "address", "name": "walletAddress", "type": "address"}
+		],
+		"name": "getLPTokenWalletBalanceAndValue",
+		"outputs": [
+			{"internalType": "uint256", "name": "lpTokenPrice", "type": "uint256"},
+			{"internalType": "uint256", "name": "lpTokenPriceDecimals", "type": "uint256"},
+			{"internalType": "uint256", "name": "lpTokenWalletBalance", "type": "uint256"},
+			{"internalType": "uint256", "name": "lpTokenDecimals", "type": "uint256"},
+			{"internalType": "uint256", "name": "lpTokenWalletValue", "type": "uint256"},
+			{"internalType": "uint256", "name": "lpTokenWalletValueDecimals", "type": "uint256"},
+			{"internalType": "string", "name": "token0Symbol", "type": "string"},
+			{"internalType": "string", "name": "token1Symbol", "type": "string"},
+			{"internalType": "address", "name": "token0Address", "type": "address"},
+			{"internalType": "address", "name": "token1Address", "type": "address"}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{"inputs": [], "name": "getNativeCoin", "outputs": [{"internalType": "address", "name": "", "type": "address"}], "stateMutability": "view", "type": "function"},
+	{
+		"inputs": [],
+		"name": "getNativeCoinPrice",
+		"outputs": [
+			{"internalType": "uint256", "name": "", "type": "uint256"},
+			{"internalType": "uint8", "name": "", "type": "uint8"},
+			{"internalType": "string", "name": "", "type": "string"},
+			{"internalType": "uint256", "name": "", "type": "uint256"}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{"inputs": [], "name": "getNotLivePriceV3Address", "outputs": [{"internalType": "address", "name": "", "type": "address"}], "stateMutability": "view", "type": "function"},
+	{
+		"inputs": [{"internalType": "address", "name": "lpTokenAddress", "type": "address"}],
+		"name": "getReserves",
+		"outputs": [
+			{"internalType": "uint256", "name": "_reserve0", "type": "uint256"},
+			{"internalType": "uint256", "name": "_reserve1", "type": "uint256"},
+			{"internalType": "uint256", "name": "reserveDecimals", "type": "uint256"}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [{"internalType": "address", "name": "lpTokenAddress", "type": "address"}],
+		"name": "getTokens",
+		"outputs": [
+			{"internalType": "string", "name": "token0Symbol", "type": "string"},
+			{"internalType": "string", "name": "token1Symbol", "type": "string"},
+			{"internalType": "address", "name": "token0Address", "type": "address"},
+			{"internalType": "address", "name": "token1Address", "type": "address"}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{"inputs": [], "name": "owner", "outputs": [{"internalType": "address", "name": "", "type": "address"}], "stateMutability": "view", "type": "function"}
+]
